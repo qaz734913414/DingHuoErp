@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "OrderCreateNew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="../../Content/Order.css" rel="stylesheet" />
+
+<div class="order customer-order-list">
+    <!--begin map-->
+    <div class="map">
+        <a class="index" href="/index">首页</a>&nbsp;&gt;&nbsp;
+        <a href="/order/order?action=list">订单</a>&nbsp;&gt;&nbsp;
+        <a href="/order/order?action=list">新增订单</a>
+    </div>
+    <!--end map-->
+
+    <div class="main-t">
+        <div class="control-box ui-page-tab-con">
+            <div class="control-group">
+                <div class="control-input radios">
+                    <input type="radio" class="radio"/> 订货单
+                    <input type="radio" class="radio checked"/> 退货单
+                </div>
+            </div>
+
+            <div class="grid-wrap">
+                <table class="gideTable">
+                    <thead>
+                        <tr>
+                            <th style="width:50px;">#NO.</th>
+                            <th style="width:450px;">商品</th>
+                            <th>数量</th>
+                            <th>单位</th>
+                            <th>单价</th>
+                            <th>小计</th>
+                            <th style="width:200px;">备注</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>俏江南饺子</td>
+                            <td>10</td>
+                            <td>包</td>
+                            <td>100</td>
+                            <td>10*100=1000</td>
+                            <td>羊肉的</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="order-total">
+                <div class="total-r">
+                    <div class="total-group">
+                        <label class="total-label">合计：</label>
+                        <div class="total">￥<span class="total-money">0.00</span></div>
+                    </div>
+
+                    <div class="total-group">
+                        <label class="total-label">应付总额：</label>
+                        <div class="total red">￥<span class="total-rel-money">0.00</span></div>
+                    </div>
+                </div>
+                <div class="total-l chks">
+                    <!-- <div class="control-group">
+                            <label class="ui-chk chk fl"><input type="checkbox" name="isUseBackPoint">使用返点</label><span class="is-use-back-point-con fl" style="display: none;">：返点帐户余额￥<span class="back-point-account">0.00</span>元，本次使用￥（<input type="text" class="ui-input-line ui-input-line-dis" value="0" disabled id="inp-back-point-account" />）元</span>
+                        </div> -->
+                    <div class="control-group">
+                        <span class="is-discount-order-con fl">已申请退货，获批退款金额为：￥（<input type="text" id="inp-discount-order" class="ui-input-line w80 tr" autocomplete="off">）</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group remark" style="height:43px;">
+                <label class="control-label">填写备注：</label>
+                <div class="control-input" style="height:43px;">
+                    <input class="ui-textarea-line" placeholder="在此填写备注信息..."/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">退款信息：</label>
+                <div class="control-input refund-info" style="">
+                    <a href="javascript:void(0)" class="ui-op ui-op-edit" id="refund-edit" title="编辑">编辑</a>
+                    联系人：<span class="contact">张总</span>
+                    联系电话：<span class="mobile">18588406617</span>
+                    开户银行：<span class="bank">中国建设银行深圳分行香蜜湖支行</span>
+                    开户名称：<span class="bankName">易订货演示帐号A店</span>
+                    银行账号：<span class="bankAccount">44201015700052508420</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-box btn-submit">
+        <a class="ui-btn ui-btn-theme save" href="javascript:void(0)">提交</a>
+        <a class="ui-btn ui-btn-default cancel" href="javascript:void(0)">取消</a>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var _width = $('.order-total').css('width');
+        $('.grid-wrap').css('width', _width);
+    })
+</script>

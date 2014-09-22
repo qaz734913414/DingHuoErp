@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="loginl">
+    <img src="@Url.Content("~/Content/Images/loginll.jpg")">
+</div>
+
+<div class="loginr">
+    <form>
+        <h1>登录</h1>
+        <div class="content" style=" margin-top:10px;">
+            <input type="text" class="ui-input-h40"/><br/>
+            <input type="password" class="ui-input-h40"/><br/>
+            <input type="submit" class="ui-submit-blue" id="btn-submit" value="登录">
+		</div>
+    </form>
+    <div class="noaccount">没有易订货帐户？<a class="register" href="https://sso.dinghuo123.com/apply/apply?service=ydh-web&amp;relayState=/order/order?action=list">立即注册</a></div>
+</div>
+
+<div class="cb"></div>

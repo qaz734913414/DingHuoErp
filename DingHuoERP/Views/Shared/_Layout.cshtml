@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Home.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="side-wrap">
+        <h1 class="logo"><a title="货来了，让进货不再麻烦！" href="/">货来了</a></h1>
+        <div class="side-menu">
+        <ul>
+            <li id="order" class="current"><a class="order" href="/order/order?action=list">订单</a></li>
+            <li id="customer" class=""><a class="customer" href="/customer/customer?action=list&amp;customerStatus=0">客户</a></li>
+            <li id="product" class=""><a class="product" href="/product/product?action=list&amp;status=0">商品</a></li>
+            <li id="pay" class=""><a class="pay" href="/pay/payment?action=list">资金</a></li>
+            <li id="message" class=""><a class="message" href="/message/notification?action=list">通知</a></li>
+            <li id="report" class=""><a class="report" href="/report/report?action=load&amp;reportType=business&amp;statisticsType=2&amp;dateSegment=4">报表</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="r-wrap">
+        <div class="header">
+            <div class="header-wrap">
+                <h2>zcj123</h2>
+                <span class="h2-spec">分销订货系统</span>
+                <div class="header-user-op">
+                    您好,
+                    <div class="control-filter">
+                        <span id="account-edit" class="table-filter"><a class="header-real-name theme-color" href="/setting/user?action=userInfo">zcj123</a></span>
+                        &nbsp;&nbsp;
+                        <a class="header-logout" href="/logout?action=logout">退出</a>
+
+                        <a class="header-helper" href="/guide/a01.html">帮助</a>
+                    </div>
+
+                </div>
+
+                <div class="cb"></div>
+                <div class="search-box unfocus-search-box">
+                    <div class="fr search-con">
+	                    <a class="advance-search-link" id="advanceSearchLink" href="javascript:void(0)">高级<br>搜索</a>
+	                    <span class="ui-combo-wrap" id="searchComboWrap" style="width: 98px;">
+                        <input type="text" class="input-txt" value="" autocomplete="off" readonly="readonly" style="cursor: default; width: 58px;"><i class="trigger"></i>
+	                    </span>
+                        <input type="text" class="ui-input search" id="search" placeholder="请输入订货单号或客户名称" autocomplete="off">
+                        <a class="ui-search-ico" id="op-search" href="javascript:void(0)" title="查找">查找</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-wrap">
+        @RenderBody()
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            urlFirstIn();
+            menuMouseOver();
+        });
+
+        var menuMouseOver = function () {
+            $('.side-menu ul li').bind('mouseover',function () {
+                $(this).siblings().removeClass('current');
+                $(this).addClass('current');
+            }).bind('mouseleave', function () {
+                var localUrl = location.href;
+                var urlArr = localUrl.split('/');
+                if (urlArr.length > 4) {
+                    var newUrl = urlArr[3];
+                    $('.side-menu ul li').removeClass('current');
+                    $('#' + newUrl).addClass('current');
+                }
+            });
+        }
+
+        var urlFirstIn = function () {
+            var localUrl = location.href;
+            var urlArr = localUrl.split('/');
+            if (urlArr.length > 4) {
+                var newUrl = urlArr[3];
+                $('.side-menu ul li').removeClass('current');
+                $('#' + newUrl).addClass('current');
+            } else {
+                $('.side-menu ul li').first().addClass('current');
+            }
+        }
+    </script>
+</body>
+</html>

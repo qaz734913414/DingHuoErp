@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="../../Content/Order.css" rel="stylesheet" />
+<div class="order customer-order-list">
+    <!--begin map-->
+    <div class="map">
+		<a class="index" href="/index">首页</a>&nbsp;&gt;&nbsp;<a href="/order/order?action=list">订单</a>
+	</div>
+    <!--end map-->
+    <ul class="ui-tab-menu">
+	    <li class="current"><a href="/order/order?action=list">订货单</a></li>
+	    <li><a href="/order/returnOrder?action=list">退货单</a></li>
+	    <li><a href="/order/orderStatistics.jsp">订单统计</a></li>
+	</ul>
+
+    <div class="main-t">
+        <div class="func clearfix">
+            <div class="btn-group">
+		           <a class="ui-btn ui-btn-green" href="/order/OrderCreateNew">
+                       <span class="ui-btn-add-ico"></span><span class="ui-btn-txt">新增</span>
+		           </a>
+		    </div>
+
+            <div class="control-filter">筛选：
+	                 <span id="order-filter-time" class="table-filter">全部订单</span>
+	                 <div class="target_box shadow" id="order-filter-time-box" style="position: absolute; left: 186px; top: 257px; z-index: 999; display: none;">
+	                     <ul>                         
+	                         <li><a href="javascript:void(0);" onclick="filterOrderByStatus()" class="selected">全部订单</a></li>
+	                         
+	                         <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-2)">待处理订单</a></li>
+	                         <li><a href="javascript:void(0);" onclick="filterOrderByStatus(6)">已完成订单</a></li>
+	                         <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-1)">已作废订单</a></li>
+	                     </ul>
+	                 </div>
+	           </div>
+
+        </div>
+
+        <!--begin table-->
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr class="">
+                        <th class="tl">单号</th>
+                        <th class="tr" width="110">金额</th>
+                        <th class="tl" width="100">收货地址</th>
+
+                        <th class="tc" width="120">出库/发货</th>
+
+                        <th class="tl" width="100">审核状态</th>
+                        <th class="tc" width="100">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class="order-num">
+                            <a href="/order/order?action=query&amp;orderNum=DH-O-20140911-015101">DH-O-20140911-015101</a>
+                        </td>
+                        <td class="tr">￥1,776.00</td>
+                        <td class="order-address tl">
+                            <span>订货客户</span>
+                        </td>
+
+                        <td class="tc order-logistics-status">
+                            <span>已出库/已发货</span>
+                        </td>
+
+                        <td class="order-status">
+                            <span class="orange">待收货确认</span>
+                        </td>
+                        <td class="order-op tc">
+                            <a href="/order/order?action=query&amp;orderNum=DH-O-20140911-015101" class="theme-color" title="订单详情">订单详情</a>
+                            &nbsp;&nbsp;<a class="order-pay theme-color ml10" href="javascript:void(0)">付款</a>
+                            <div class="cb"></div>
+
+                            <a class="ui-btn ui-btn-green " href="/order/order?action=queryLogistics&amp;orderNum=DH-O-20140911-015101">收货确认</a>
+
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="selected">
+                        <td class="tr pr10" colspan="7">
+                            <div class="fl">共计：10条</div>
+                            <div class="page">
+                                <span>每页显示</span>
+                                <select class="select_page pageSel">
+                                    <option selected="selected" value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                </select>
+
+                                <span>条</span>
+                                <span>第</span>
+                                <input class="ui-pager-inp" type="text" value="1" onkeyup="inputPage(this);" autocomplete="off">
+                                <span>页</span>
+                                <span>共 10 页</span>
+
+                                <div class="pn">
+                                    <a href="javascript:void(0);" onclick="goPage(1)" class="ui-pager-prev">上一页</a>
+                                    <a href="javascript:void(0);" onclick="goPage(1)" class="ui-pager-next">下一页</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+        <!--end table-->
+    </div>
+</div>
