@@ -115,6 +115,7 @@
     <Content Include="Content\Images\loginll.jpg" />
     <Content Include="Content\Images\logo_icon_v1.0.2.png" />
     <Content Include="Content\Images\menu.png" />
+    <Content Include="Content\Images\product80x80.png" />
     <Content Include="Content\Images\radio.png" />
     <Content Include="Content\Images\spinner.gif" />
     <Content Include="Content\Images\step.png" />

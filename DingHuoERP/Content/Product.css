@@ -1,4 +1,8 @@
-﻿
+﻿* {
+margin: 0;
+padding: 0;
+outline: 0;
+}
 .productimg{
 width: 60px;
 height: 60px;
@@ -54,6 +58,7 @@ vertical-align: middle;
 outline: 0;
 font-family: verdana,'宋体','Microsoft Yahei',Tahoma,Arial;
 font-size: 12px;
+margin-left:0;
 }
 .ui-combo-disabled {
 background: #fcfcfc;
@@ -136,6 +141,8 @@ font-size: 12px;
 }
 
 /*Table*/
+.product-list {
+margin-top:10px;}
 .productadd .table-wrap-lite {
 width: 100%;
 padding-top: 10px;
@@ -153,5 +160,58 @@ background-color: #f5f6f7;
 border: 1px solid #e5e8ea;
 color: #555;
 font-weight: 400;
+}
+
+.productadd .table-wrap-lite td {
+text-align: center;
+}
+
+.table-wrap-lite tbody td {
+padding: 0 10px;
+vertical-align: middle;
+height: 44px;
+border: 1px solid #e5e8ea;
+background-color: #fff;
+color: #666;
+word-break: break-all;
+text-align:center;
+}
+
+.productadd .table-wrap-lite .product-img-thumb img {
+z-index: 1;
+width: 80px;
+height: 80px;
+border: 0;
+}
+
+.productadd .table-wrap-lite .control-group {
+margin-top: 0;
+}
+.control-group {
+margin-top: 10px;
+overflow: hidden;
+min-height: 32px;
+line-height: 32px;
+}
+.productadd .table-wrap-lite .ui-input {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+width: 100%;
+height: 32px;
+}
+.control-group .control-input .ui-input {
+width: 314px;
+}
+.ui-input-dis:hover, .ui-textarea-dis:hover, ui-datepicker-dis-inp:hover {
+border: 1px solid #d6dee3;
+}
+.ui-datepicker-inp:hover, .ui-input:hover, .ui-textarea:hover {
+border: 1px solid #a8b3b9;
+}
+.ui-datepicker-dis-inp, .ui-input-dis, .ui-textarea-dis {
+background-color: #fcfcfc;
+color: #999;
+cursor: not-allowed;
 }
 

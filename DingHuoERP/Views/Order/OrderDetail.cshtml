@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "OrderCreateNew";
+    ViewBag.Title = "OrderDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="../../Content/Order.css" rel="stylesheet" />
@@ -15,10 +15,14 @@
 
     <div class="main-t">
         <div class="control-box ui-page-tab-con">
+
             <div class="control-group">
-                <div class="control-input radios">
-                    <input type="radio" class="radio"/> 订货单
-                    <input type="radio" class="radio checked"/> 退货单
+                <div style="margin-bottom:20px;">
+                    <span class="order-agent-name">易订货演示帐号A店【普通】<input id="agentId" type="hidden" value="14524437"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="order-number">单号：DH-O-20140913-015101</span>【待收货确认】
+                    <div class="btn-group">
+                        <a href="javascript:void(0)" class="mr5 btn-back-confirm theme-color"><em class="ui-btn-return-blue-ico"></em>退回</a>
+                        <a class="theme-color mr5" href="http://corp2.dinghuo123.com/order/order?action=exporter&amp;orderNum=DH-O-20140913-015101"><em class="ui-btn-export-blue-ico"></em>导出订单</a>
+                    </div>
                 </div>
             </div>
 
@@ -27,7 +31,6 @@
                     <thead>
                         <tr>
                             <th style="width:50px;">#NO.</th>
-                            <th style="width:50px;"></th>
                             <th style="width:450px;">商品</th>
                             <th>数量</th>
                             <th>单位</th>
@@ -40,7 +43,6 @@
                     <tbody>
                         <tr>
                             <td>1.</td>
-                            <td><span style="font-weight:bold; font-size:18px; color: #3da8b9;">-</span></td>
                             <td class="tdProduct">俏江南饺子<span class="productPanel">...</span></td>
                             <td>10</td>
                             <td>包</td>
@@ -51,7 +53,6 @@
 
                         <tr>
                             <td>2.</td>
-                            <td><span style="font-weight:bold; font-size:18px; color: #3da8b9;">-</span></td>
                             <td class="tdProduct">俏江南饺子<span class="productPanel">...</span></td>
                             <td>10</td>
                             <td>包</td>
@@ -62,7 +63,6 @@
 
                         <tr>
                             <td>3.</td>
-                            <td><span style="font-weight:bold; font-size:18px; color: #3da8b9;">-</span></td>
                             <td class="tdProduct">俏江南饺子<span class="productPanel">...</span></td>
                             <td>10</td>
                             <td>包</td>
@@ -73,18 +73,12 @@
 
                         <tr>
                             <td>4.</td>
-                            <td><span style="font-weight:bold; font-size:18px; color: #3da8b9;">-</span></td>
                             <td class="tdProduct">俏江南饺子<span class="productPanel">...</span></td>
                             <td>10</td>
                             <td>包</td>
                             <td>100</td>
                             <td>10*100=1000</td>
                             <td>羊肉的</td>
-                        </tr>
-
-                        <tr>
-                            <td><span style="font-weight:bold; font-size:18px; color: #3da8b9;">+</span></td>
-                            <td colspan="7"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -102,31 +96,31 @@
                         <div class="total red">￥<span class="total-rel-money">0.00</span></div>
                     </div>
                 </div>
-                <div class="total-l chks">
-                    <div class="control-group">
-                        <span class="is-discount-order-con fl">已申请退货，获批退款金额为：￥（<input type="text" id="inp-discount-order" class="ui-input-line w80 tr" autocomplete="off">）</span>
+            </div>
+
+            <div class="control-group remark" style="height: 43px;">
+                <label class="control-label">填写备注：</label>
+                <div class="control-input" style="height: 43px;">
+                    <input class="ui-textarea-line" />
+                </div>
+            </div>
+            <div class="control-group remark" style="height: 43px; margin-top:0;">
+                <label class="control-label">收货信息：</label>
+                <div class="control-input" style="height: 43px;">
+                    <input class="ui-textarea-line" />
+                </div>
+            </div>
+            <div class="control-group remark" style="height: 43px; margin-top:0;">
+                <label class="control-label">发票信息：</label>
+                <div class="control-input" style="height: 43px;">
+                    <input class="ui-textarea-line" />
+                </div>
+                <div class="control-group remark" style="height: 43px; margin-top:0;">
+                    <label class="control-label">交货日期：</label>
+                    <div class="control-input" style="height: 43px;">
+                        <input class="ui-textarea-line" />
                     </div>
                 </div>
-            </div>
-
-            <div class="control-group remark" style="height:43px;">
-                <label class="control-label">填写备注：</label>
-                <div class="control-input" style="height:43px;">
-                    <input class="ui-textarea-line" placeholder="在此填写备注信息..."/>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label">退款信息：</label>
-                <div class="control-input refund-info" style="">
-                    <a href="javascript:void(0)" class="ui-op ui-op-edit" id="refund-edit" title="编辑">编辑</a>
-                    联系人：<span class="contact">张总</span>
-                    联系电话：<span class="mobile">18588406617</span>
-                    开户银行：<span class="bank">中国建设银行深圳分行香蜜湖支行</span>
-                    开户名称：<span class="bankName">易订货演示帐号A店</span>
-                    银行账号：<span class="bankAccount">44201015700052508420</span>
-                </div>
-            </div>
         </div>
     </div>
 
