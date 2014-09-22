@@ -16,5 +16,9 @@ namespace DingHuoERP.Controllers
             return View();
         }
 
+        public ActionResult ProductAddNew()
+        {
+            return View();
+        }
     }
 }

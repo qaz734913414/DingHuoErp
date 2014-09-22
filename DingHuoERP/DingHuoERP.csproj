@@ -121,6 +121,7 @@
     <Content Include="Content\Images\table-filter.png" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\Order.css" />
+    <Content Include="Content\Product.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -219,6 +220,7 @@
     <Content Include="Views\Shared\_FindPasswordLayout.cshtml" />
     <Content Include="Views\Account\FindPassword.cshtml" />
     <Content Include="Views\Order\OrderCreateNew.cshtml" />
+    <Content Include="Views\Product\ProductAddNew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

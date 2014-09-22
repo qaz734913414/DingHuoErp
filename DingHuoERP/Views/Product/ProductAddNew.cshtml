@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "ProductAddNew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="../../Content/Order.css" rel="stylesheet" />
+<link href="../../Content/Product.css" rel="stylesheet" />
+<div class="order customer-order-list">
+    <!--begin map-->
+    <div class="map">
+        <a class="index" href="/index">首页</a>&nbsp;&gt;&nbsp;
+        <a href="/order/order?action=list">商品</a>&nbsp;&gt;&nbsp;
+        <a href="/order/order?action=list">新增商品</a>
+    </div>
+    <!--end map-->
+    <div class="main-t">
+        <!--step1 start-->
+        <div class="control-box step1">
+            <div class="control-group">
+                <div class="control-label">商品名称</div>
+                <div class="control-input">
+                    <input type="text" class="ui-input" name="productName" autocomplete="off">
+                </div>
+            </div>
+            <div class="control-group" style="">
+                <div class="control-label">商品规格</div>
+                <div class="control-input">
+                    <span class="ui-combo-wrap ui-combo-disabled" id="productSpec">
+                        <input type="text" name="productSpec" class="input-txt" autocomplete="off" value="" style="width: 298px; cursor: default;" readonly="readonly" disabled="disabled"><i class="trigger"></i></span>
+                </div>
+            </div>
+            <div class="control-group" style="">
+                <div class="control-label"></div>
+                <div class="control-input spec-grid">
+                </div>
+            </div>
+            <div class="control-group op" style="">
+                <div class="control-label"></div>
+                <div class="control-input">
+                    <input type="button" class="ui-btn ui-btn-theme generate" value="下一步" autocomplete="off">
+                </div>
+            </div>
+        </div>
+        <!--step1 end-->
+
+        <!--step2 start-->
+        <div class="control-box step2" style="opacity: 0.5;">
+            <div class="control-group" style="">
+                <div class="control-label">商品类别</div>
+                <div class="control-input">
+                    <span class="ui-combo-wrap ui-combo-disabled">
+                        <input type="text" name="productSpec" class="input-txt" autocomplete="off" value="" style="width: 298px; cursor: default;" readonly="readonly" disabled="disabled"><i class="trigger"></i></span>
+                </div>
+            </div>
+            <div class="control-group" style="">
+                <div class="control-label">是否上架</div>
+                <div class="control-input">
+                    <span class="ui-combo-wrap ui-combo-disabled">
+                        <input type="text" name="productSpec" class="input-txt" autocomplete="off" value="" style="width: 298px; cursor: default;" readonly="readonly" disabled="disabled"><i class="trigger"></i></span>
+                </div>
+            </div>
+            <div class="control-group" style="">
+                <div class="control-label">计量单位</div>
+                <div class="control-input">
+                    <span class="ui-combo-wrap ui-combo-disabled">
+                        <input type="text" name="productSpec" class="input-txt" autocomplete="off" value="" style="width: 298px; cursor: default;" readonly="readonly" disabled="disabled"><i class="trigger"></i></span>
+                </div>
+            </div>
+            <div class="table-wrap-lite product-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="pImg" width="80" rowspan="2">商品缩略图</th>
+                            <th class="pSpec" rowspan="2">商品规格</th>
+                            <th class="pCode" width="220" rowspan="2">商品编码/条形码</th>
+                            <th width="50" rowspan="2">排序值</th>
+                            <th width="90" rowspan="2">市场价<span class="lite-gray">（元）</span></th>
+                            <th width="90" colspan="3">订货价</th>
+                            <th width="40" rowspan="2">操作</th>
+                        </tr>
+                        <tr>
+                            <th width="80">客户级别</th>
+                            <th width="80">允许订货</th>
+                            <th width="80">订货价<span class="lite-gray">（元）</span></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="more-info-box">
+                <div class="control-group">
+                    <div class="control-label">商品关键字</div>
+                    <div class="control-input">
+                        <input type="text" class="ui-input" name="productName" autocomplete="off">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">商品介绍</div>
+                    <div class="control-input">
+                        <textarea class="ui-textarea ui-textarea-dis" name="description" cols="65" rows="4" style="cursor: not-allowed;" disabled="disabled"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--step2 end-->
+    </div>
+
+    <div class="control-box btn-submit">
+        <a class="ui-btn ui-btn-theme save" href="javascript:void(0)">提交</a>
+        <a class="ui-btn ui-btn-default cancel" href="javascript:void(0)">取消</a>
+    </div>
+</div>

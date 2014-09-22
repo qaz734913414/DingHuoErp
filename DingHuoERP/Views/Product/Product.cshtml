@@ -2,5 +2,148 @@
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="../../Content/Order.css" rel="stylesheet" />
+<link href="../../Content/Product.css" rel="stylesheet" />
+<div class="order customer-order-list">
+    <!--begin map-->
+    <div class="map">
+		<a class="index" href="/index">首页</a>&nbsp;&gt;&nbsp;<a href="/order/order?action=list">商品</a>
+	</div>
+    <!--end map-->
+    <ul class="ui-tab-menu">
+	    <li class="current"><a href="/order/order?action=list">商品列表</a></li>
+	    <li><a href="/order/returnOrder?action=list">商品库存</a></li>
+	    <li><a href="/order/orderStatistics.jsp">商品促销</a></li>
+        <li><a href="/order/orderStatistics.jsp">商品类别</a></li>
+        <li><a href="/order/orderStatistics.jsp">计量单位</a></li>
+        <li><a href="/order/orderStatistics.jsp">规格模板</a></li>
+	</ul>
 
-<h2>Product</h2>
+    <div class="main-t">
+        <div class="func clearfix">
+            <div class="btn-group">
+		           <a class="ui-btn ui-btn-green" href="/product/ProductAddNew">
+                       <span class="ui-btn-add-ico"></span><span class="ui-btn-txt">新增</span>
+		           </a>
+		    </div>
+
+            <div class="control-filter">
+                筛选：
+	                 <span id="order-filter-time" class="table-filter">全部类别</span>
+                <div class="target_box shadow" id="order-filter-time-box" style="position: absolute; left: 186px; top: 257px; z-index: 999; display: none;">
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus()" class="selected">全部类别</a></li>
+
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-2)">待处理订单</a></li>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(6)">已完成订单</a></li>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-1)">已作废订单</a></li>
+                    </ul>
+                </div>
+
+                <span class="table-filter">上架</span>
+                <div class="target_box shadow" style="position: absolute; left: 186px; top: 257px; z-index: 999; display: none;">
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus()" class="selected">全部类别</a></li>
+
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-2)">待处理订单</a></li>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(6)">已完成订单</a></li>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-1)">已作废订单</a></li>
+                    </ul>
+                </div>
+
+                <span class="table-filter">排序</span>
+                <div class="target_box shadow" style="position: absolute; left: 186px; top: 257px; z-index: 999; display: none;">
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus()" class="selected">全部类别</a></li>
+
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-2)">待处理订单</a></li>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(6)">已完成订单</a></li>
+                        <li><a href="javascript:void(0);" onclick="filterOrderByStatus(-1)">已作废订单</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!--begin table-->
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr class="">
+                        <th><input type="checkbox"/></th>
+                        <th>商品名称</th>
+                        <th width="110">价格</th>
+                        <th width="100">单位</th>
+                        <th width="120">库存</th>
+                        <th width="120">预购</th>
+                        <th width="100">状态</th>
+                        <th width="100">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"/></td>
+                        <td>
+                            <div><img class="productimg" src="http://res2.dinghuo123.com/images/productImgs/_60_p8c3f2493-6090-478c-b330-3c4dea45ab4c.jpg"></div>
+                            <div class="product-title">
+							<a class="lite-gray" href="">商品编码:P11205810</a><br>
+							<a class="title" href="">莎拉公主 奥地利水晶项链 天使泪水晶项链套装【默认：天蓝色】</a>
+							</div>
+                        </td>
+                        <td class="tr">￥1,776.00</td>
+                        <td class="order-address tl">
+                            <span>件</span>
+                        </td>
+                        <td class="tc order-logistics-status">
+                            <span>120</span>
+                        </td>
+                        <td class="tc order-logistics-status">
+                            <span>0</span>
+                        </td>
+                        <td class="order-status">
+                            <span class="orange">上架</span>
+                        </td>
+                        <td class="order-op tc">
+                            <a href="/order/order?action=query&amp;orderNum=DH-O-20140911-015101" class="theme-color" title="修改">修改</a>
+                            &nbsp;&nbsp;
+                            <a class="order-pay theme-color ml10" href="javascript:void(0)">删除</a>
+                            <div class="cb"></div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="selected">
+                        <td class="tr pr10" colspan="8">
+                            <div class="fl">
+                                <input type="checkbox"/>&nbsp;&nbsp;
+                                <a class="batch-op" href="javascript:void(0)">批量上下架</a>&nbsp;&nbsp;&nbsp;
+                                <a class="batch-op" href="javascript:void(0)">批量删除</a>
+                            </div>
+                            <div class="page">
+                                <span>共计：10条</span>
+                                <span>每页显示</span>
+                                <select class="select_page pageSel">
+                                    <option selected="selected" value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                </select>
+
+                                <span>条</span>
+                                <span>第</span>
+                                <input class="ui-pager-inp" type="text" value="1" onkeyup="inputPage(this);" autocomplete="off">
+                                <span>页</span>
+                                <span>共 10 页</span>
+
+                                <div class="pn">
+                                    <a href="javascript:void(0);" onclick="goPage(1)" class="ui-pager-prev">上一页</a>
+                                    <a href="javascript:void(0);" onclick="goPage(1)" class="ui-pager-next">下一页</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!--end table-->
+    </div>
+</div>
